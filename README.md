@@ -16,7 +16,7 @@ sensor_proc --MsgSend(SensorUpdate)--> decision_proc --MsgSend(MotorCommand)--> 
 - `logger.h`/`logger.c` - `plog_info/warn/error/critical()`, wrapping QNX's real system logger (`slogf`, read back later with `sloginfo`) and mirroring to stdout/stderr.
 - `rt.c`/`rt.h` - SCHED_FIFO priority + CPU-affinity setup, one call per process.
 - `gpio.*`, `motor.*`, `ultrasonic.*`, `i2c.*`, `mpu6050.*` - hardware drivers, shared by all three processes.
-- `tests/` - standalone hardware test binaries (`motor_test`, `ultrasonic_test`, `imu_test`).
+- `motor_test`, `ultrasonic_test`, `imu_test` - standalone hardware test binaries.
 - `run_parking.sh` / `stop_parking.sh` - start/stop all three processes together (nohup-based, survives an SSH/Ethernet disconnect).
 
 ## Build & deploy
